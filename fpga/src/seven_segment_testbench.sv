@@ -1,15 +1,15 @@
-// E155, Lab 2 - Testbench to test seven segment display
+// E155, Lab 3 - Testbench to test seven segment display
 
 // Name: Sadhvi Narayanan
 // Email: sanarayanan@g.hmc.edu
-// Date: 09/03/2025
+// Date: 09/14/2025
 
 module seven_segment_testbench();
 
   logic        clk;
   logic		   reset;
   
-  logic [3:0] s;
+  logic [4:0] s;
   logic [6:0] seg;
   
   logic [6:0]  actual, expected;
@@ -62,5 +62,7 @@ module seven_segment_testbench();
     end
 
 endmodule
+
+
 
 

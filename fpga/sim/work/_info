@@ -1,42 +1,35 @@
 m255
 K4
 z2
-!s12c _opt2
-Z0 !s99 nomlopt
-Z1 !s12c _opt
+Z0 !s12c _opt
+Z1 !s99 nomlopt
 R0
+R1
+Z2 !s12c _opt1
+R1
+R2
+R1
+R2
+R1
+Z3 !s12c _opt2
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
 R1
 R0
 R1
-R0
+R2
 R1
-R0
-!s12c _opt1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
-R1
-R0
-R1
-R0
-R1
-R0
-R1
-R0
-R1
-R0
-R1
-R0
-R1
-R0
-R1
-R0
-R1
-R0
-R1
-R0
+R2
 R1
 R0
 R1
@@ -68,11 +61,58 @@ R0
 R1
 R0
 R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R3
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R0
+R1
 R0
 R1
 R0
 R1
 R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
 !s11f vlog 2024.2 2024.05, May 20 2024
 13
 !s112 1.1
@@ -80,173 +120,324 @@ R0
 !i10e 25
 !i10f 100
 cModel Technology
-Z2 dC:/Users/sanarayanan/Desktop/test
+Z4 dC:/Users/sanarayanan/my_designs/lab3_sn
 T_opt
-!s110 1757038698
-V@zeUfB9X71=nQM6JXLn3T2
-Z3 04 17 4 work testbench_lab2_sn fast 0
-=7-00be43eaebb3-68ba486a-151-5518
-R0
-!s12f OEM25U3 
-Z4 !s12b OEM100
-Z5 !s124 OEM100
-Z6 !s135 nogc
-Z7 o-quiet -auto_acc_if_foreign -work work -L iCE40UP +acc
-Z8 tCvgOpt 0
+!s110 1757886816
+VnFbk0>MKW5=2dRHa4?jla2
+04 19 4 work testbench_state_fsm fast 0
+=2-00be43e604b8-68c73960-2ba-5510
+R1
+Z5 !s12f OEM25U2 
+Z6 !s12b OEM100
+Z7 !s124 OEM100
+Z8 !s135 nogc
+Z9 o-quiet -auto_acc_if_foreign -work work +acc -L iCE40UP
+Z10 tCvgOpt 0
 n@_opt
-Z9 OL;O;2024.2;79
-R2
+Z11 OL;O;2024.2;79
+R4
 T_opt1
-!s110 1757033417
-VDB70H4_lhaQoz3ejUe5F23
+!s110 1757884469
+VBC4<4OWkK8O1k@n[9nFNz0
 04 15 4 work testbench_clock fast 0
-=1-00be43eaebb3-68ba33c9-303-5380
-R0
-!s12f OEM25U2 
-R4
+=3-00be43e604b8-68c73035-1d8-8918
+R1
 R5
 R6
 R7
 R8
+R9
+R10
 n@_opt1
-R9
-R2
-T_opt2
-!s110 1757133583
-V>_NW[aEWO;XMCbGiXQm[>1
-R3
-=1-00be43eaebb3-68bbbb0e-3e7-25f4
-R0
-!s12f OEM25U4 
+R11
 R4
+T_opt2
+!s110 1757884083
+VE1hFJFEZ;^NiF@AW;i3980
+04 24 4 work testbench_keypad_scanner fast 0
+=6-00be43e604b8-68c72eb3-1f7-1aac
+R1
 R5
 R6
 R7
 R8
-n@_opt2
 R9
+R10
+n@_opt2
+R11
+R4
 vclock
-2C:/Users/sanarayanan/my_designs/lab2_sn/source/impl_1/clock.sv
-Z10 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z11 !s110 1757133560
+2C:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/clock.sv
+Z12 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z13 !s110 1757888579
 !i10b 1
-!s100 _UcEchO=LLjKjmL5WF5g01
-I9EIY^>^BCW;Q]NePG6L3G2
+!s100 Qf8;K;aSCGfZ7[3M`<ETH0
+IOBOo9U`0_R`7NjiNhz@dU0
 S1
-Z12 dC:/Users/sanarayanan/my_designs/lab2_testing
-w1757049092
-8C:/Users/sanarayanan/my_designs/lab2_sn/source/impl_1/clock.sv
-FC:/Users/sanarayanan/my_designs/lab2_sn/source/impl_1/clock.sv
-!i122 179
-L0 1 22
-Z13 VDg1SIo80bB@j0V0VzS_@n1
-Z14 OL;L;2024.2;79
+R4
+w1757887217
+8C:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/clock.sv
+FC:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/clock.sv
+!i122 762
+L0 9 34
+Z14 VDg1SIo80bB@j0V0VzS_@n1
+Z15 OL;L;2024.2;79
 r1
 !s85 0
 31
-Z15 !s108 1757133560.000000
-!s107 C:/Users/sanarayanan/my_designs/lab2_sn/source/impl_1/clock.sv|
-!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/sanarayanan/my_designs/lab2_sn/source/impl_1/clock.sv|
+Z16 !s108 1757888579.000000
+!s107 C:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/clock.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/clock.sv|
 !i113 0
-Z16 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R8
-vlab2_sn
-2C:/Users/sanarayanan/my_designs/lab2_sn/source/impl_1/lab2_sn.sv
+Z17 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R10
-R11
-!i10b 1
-!s100 SJ2lA42h13P]LonZ3YSOA3
-IzY<z0mjkjRgT8n`9^kco_0
-S1
+vkeypad_scanner
+2C:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/keypad_scanner.sv
 R12
-w1757132568
-8C:/Users/sanarayanan/my_designs/lab2_sn/source/impl_1/lab2_sn.sv
-FC:/Users/sanarayanan/my_designs/lab2_sn/source/impl_1/lab2_sn.sv
-!i122 180
-L0 1 45
 R13
+!i10b 1
+!s100 ej_0FM>KK:daWJ?7j5Cnb1
+Ia1OkP8ICHRX[D><Z0O38Q1
+S1
+R4
+w1757887694
+8C:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/keypad_scanner.sv
+FC:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/keypad_scanner.sv
+!i122 763
+L0 8 59
 R14
+R15
 r1
 !s85 0
 31
-R15
-!s107 C:/Users/sanarayanan/my_designs/lab2_sn/source/impl_1/lab2_sn.sv|
-!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/sanarayanan/my_designs/lab2_sn/source/impl_1/lab2_sn.sv|
-!i113 0
 R16
-R8
+!s107 C:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/keypad_scanner.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/keypad_scanner.sv|
+!i113 0
+R17
+R10
+vlab3_sn
+2C:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/lab3_sn.sv
+R12
+R13
+!i10b 1
+!s100 OIMimk?AogB_:LAMgYSaT1
+IA=O3^0B`^Oc7_gfKzf6M;2
+S1
+R4
+w1757887607
+8C:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/lab3_sn.sv
+FC:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/lab3_sn.sv
+!i122 764
+L0 8 87
+R14
+R15
+r1
+!s85 0
+31
+R16
+!s107 C:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/lab3_sn.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/lab3_sn.sv|
+!i113 0
+R17
+R10
+vnumber_capture
+2C:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/number_capture.sv
+R12
+R13
+!i10b 1
+!s100 ^LlQ]@aMDM^2eGViL9nEi1
+IdN15P6?]N__K`a_PSFO790
+S1
+R4
+w1757887926
+8C:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/number_capture.sv
+FC:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/number_capture.sv
+!i122 765
+L0 1 38
+R14
+R15
+r1
+!s85 0
+31
+R16
+!s107 C:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/number_capture.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/number_capture.sv|
+!i113 0
+R17
+R10
 vseven_segment
-2C:/Users/sanarayanan/my_designs/lab2_sn/source/impl_1/seven_segment.sv
-R10
-R11
-!i10b 1
-!s100 Ln00;bWai`@dTC0YCe=aY3
-IOAATigb6jE<deh26@MmTi3
-S1
+2C:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/seven_segment.sv
 R12
-w1756849919
-8C:/Users/sanarayanan/my_designs/lab2_sn/source/impl_1/seven_segment.sv
-FC:/Users/sanarayanan/my_designs/lab2_sn/source/impl_1/seven_segment.sv
-!i122 181
+R13
+!i10b 1
+!s100 HZ2hnB4cKaIGR<T<REUl61
+I8fEnPBgEkGm_6_m662o?j2
+S1
+R4
+w1757887218
+8C:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/seven_segment.sv
+FC:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/seven_segment.sv
+!i122 766
 L0 9 27
-R13
 R14
+R15
 r1
 !s85 0
 31
-R15
-!s107 C:/Users/sanarayanan/my_designs/lab2_sn/source/impl_1/seven_segment.sv|
-!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/sanarayanan/my_designs/lab2_sn/source/impl_1/seven_segment.sv|
-!i113 0
 R16
-R8
+!s107 C:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/seven_segment.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/seven_segment.sv|
+!i113 0
+R17
+R10
+vseven_segment_testbench
+2C:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/seven_segment_testbench.sv
+R12
+Z18 !s110 1757888580
+!i10b 1
+!s100 IHon3d8SP^AOTkKPc]R2X1
+IV6iUGGL9M=MdmH1ChLN^z1
+S1
+R4
+w1757887341
+8C:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/seven_segment_testbench.sv
+FC:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/seven_segment_testbench.sv
+!i122 767
+L0 7 58
+R14
+R15
+r1
+!s85 0
+31
+R16
+!s107 C:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/seven_segment_testbench.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/seven_segment_testbench.sv|
+!i113 0
+R17
+R10
+vstate_fsm
+2C:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/state_fsm.sv
+R12
+R18
+!i10b 1
+!s100 LcS0Skmdkoa=KlJHmFBXl3
+IS6[cg;HO<@EBi<;AD_U863
+S1
+R4
+w1757887891
+8C:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/state_fsm.sv
+FC:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/state_fsm.sv
+!i122 768
+L0 9 131
+R14
+R15
+r1
+!s85 0
+31
+Z19 !s108 1757888580.000000
+!s107 C:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/state_fsm.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/state_fsm.sv|
+!i113 0
+R17
+R10
 vtestbench_clock
-2C:/Users/sanarayanan/my_designs/lab2_sn/source/impl_1/testbench_clock.sv
-R10
-R11
-!i10b 1
-!s100 fg;7GSg4z4_eE`Fbi^65D1
-I:Sfh@]2Xg[h>d1mhjQQ:E1
-S1
+2C:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/testbench_clock.sv
 R12
-w1757049072
-8C:/Users/sanarayanan/my_designs/lab2_sn/source/impl_1/testbench_clock.sv
-FC:/Users/sanarayanan/my_designs/lab2_sn/source/impl_1/testbench_clock.sv
-!i122 182
-L0 2 60
-R13
+R18
+!i10b 1
+!s100 jU8Ym`dFBR>P[6EnHCSCU3
+ILbl[VSL_RE219TU:I[e0P0
+S1
+R4
+w1757887324
+8C:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/testbench_clock.sv
+FC:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/testbench_clock.sv
+!i122 769
+L0 9 69
 R14
+R15
 r1
 !s85 0
 31
-R15
-!s107 C:/Users/sanarayanan/my_designs/lab2_sn/source/impl_1/testbench_clock.sv|
-!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/sanarayanan/my_designs/lab2_sn/source/impl_1/testbench_clock.sv|
+R19
+!s107 C:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/testbench_clock.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/testbench_clock.sv|
 !i113 0
-R16
-R8
-vtestbench_lab2_sn
-2C:/Users/sanarayanan/my_designs/lab2_sn/source/impl_1/testbench_lab2_sn.sv
+R17
 R10
-R11
-!i10b 1
-!s100 Fam^0ZQm[MKTGWdTV>JIQ2
-IaEOC>[cRc3S@[cMViNmPl2
-S1
+vtestbench_keypad_scanner
+2C:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/testbench_keypad_scanner.sv
 R12
-w1757038665
-8C:/Users/sanarayanan/my_designs/lab2_sn/source/impl_1/testbench_lab2_sn.sv
-FC:/Users/sanarayanan/my_designs/lab2_sn/source/impl_1/testbench_lab2_sn.sv
-!i122 183
-L0 2 87
-R13
+R18
+!i10b 1
+!s100 ;b>XU614=[k4P;G075O_41
+I75[ZCSB7iWG@f=i<g8RJR3
+S1
+R4
+w1757887248
+8C:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/testbench_keypad_scanner.sv
+FC:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/testbench_keypad_scanner.sv
+!i122 770
+L0 8 117
 R14
+R15
 r1
 !s85 0
 31
-R15
-!s107 C:/Users/sanarayanan/my_designs/lab2_sn/source/impl_1/testbench_lab2_sn.sv|
-!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/sanarayanan/my_designs/lab2_sn/source/impl_1/testbench_lab2_sn.sv|
+R19
+!s107 C:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/testbench_keypad_scanner.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/testbench_keypad_scanner.sv|
 !i113 0
-R16
-R8
+R17
+R10
+vtestbench_number_capture
+2C:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/testbench_number_capture.sv
+R12
+R18
+!i10b 1
+!s100 Z[]n^4c_e?93i1[SRBYDz1
+I0Bn7^9R50K]H00]BjI^Wd3
+S1
+R4
+w1757887304
+8C:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/testbench_number_capture.sv
+FC:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/testbench_number_capture.sv
+!i122 771
+L0 7 71
+R14
+R15
+r1
+!s85 0
+31
+R19
+!s107 C:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/testbench_number_capture.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/testbench_number_capture.sv|
+!i113 0
+R17
+R10
+vtestbench_state_fsm
+2C:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/testbench_state_fsm.sv
+R12
+R18
+!i10b 1
+!s100 ZK;6GcA?2bN_^lU9zDGSD3
+I8jfhUFdOA6E8eH6`kKOHZ2
+S1
+R4
+w1757887286
+8C:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/testbench_state_fsm.sv
+FC:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/testbench_state_fsm.sv
+!i122 772
+L0 9 226
+R14
+R15
+r1
+!s85 0
+31
+R19
+!s107 C:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/testbench_state_fsm.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/sanarayanan/my_designs/lab3_sn/source/impl_1/testbench_state_fsm.sv|
+!i113 0
+R17
+R10
