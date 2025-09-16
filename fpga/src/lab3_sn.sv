@@ -38,11 +38,11 @@ module lab3_sn(
        hf_osc (.CLKHFPU(1'b1), .CLKHFEN(1'b1), .CLKHF(int_osc));
   
    // the couter flop to wait for 20ms --> debouncing
-   clock # (.freq(480000)) clock_delay_1(int_osc, reset2, enable_delay, delay_signal, high);
+   clock_divider # (.freq(480000)) clock_delay_1(int_osc, reset2, enable_delay, delay_signal, high);
 
 
    // create the 60Hz clock for the seven segment display
-   clock # (.freq(200000)) clock_delay_2(int_osc, reset, enable_toggle, clk_signal, high2);
+   clock_divider # (.freq(200000)) clock_delay_2(int_osc, reset, enable_toggle, clk_signal, high2);
 
 
    // keypad scanner
