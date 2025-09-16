@@ -1,15 +1,8 @@
-// E155, Lab 3 - Finite state machine to switch between scanning the keypad, allowing time for debouncing, and
-// shifting/displaying the number on the dual-display
-
-
-// Name: Sadhvi Narayanan
-// Email: sanarayanan@g.hmc.edu
-// Date: 09/10/2025
-
+// Fixed State Machine
 module state_fsm(
    input  logic clk, reset,
    input  logic high,
-   input  logic [3:0] row_stable, row,
+   input  logic [3:0] row_stable,
    input  logic [3:0] col,
    input  logic [11:0] pressed_value,
    output logic [1:0] state, next_state,
@@ -21,7 +14,6 @@ module state_fsm(
    output logic [2:0] state_on
 ); 
 
- // internal signals
  typedef enum logic [1:0] {SCAN, DEBOUNCE_WAIT, CAPTURE} state_t;
  state_t debounce_next_state;
  
@@ -43,7 +35,7 @@ module state_fsm(
      else state <= next_state;
  end
 
- // data registers to capture numbers, presses, column/row pressed, etc.
+ // data registers
  always_ff @(posedge clk, negedge reset) begin
      if (reset == 0) begin
          first_reg <= 5'b11111;
@@ -54,11 +46,11 @@ module state_fsm(
          captured_reg <= 1'b0;
 		 debounce_next_state <= SCAN;
      end else begin
-         if (state == SCAN && |row_stable) begin
+         if (state == SCAN && (row_stable != 0 && (row_stable & (row_stable - 1)) == 0)) begin
              // Capture the key value and remember which key was pressed
              num_reg <= pressed_value[3:0];
-             captured_row <= pressed_value[11:8]; // storing the row that was pressed (synchronized)
-             captured_col <= pressed_value[7:4]; // storing the column that was pressed (synchronized)
+             captured_row <= pressed_value[11:8];
+             captured_col <= pressed_value[7:4];
              captured_reg <= 1'b1;
 			 debounce_next_state <= CAPTURE;
          end else if (state == CAPTURE && !captured_reg) begin
@@ -91,20 +83,21 @@ module state_fsm(
 
      case(state)
          SCAN: begin
-             enable_scan = 1'b1; // enable applying voltage to cols
+             enable_scan = 1'b1;
              allowed = 1'b1; // allow number capture
              reset2 = 1'b0;  // keep counter reset
-			 state_on = 3'b001; // state for LED display
+			 state_on = 3'b001;
              
-             if (|row_stable) begin // using synchronized row to check if there are any 1's when voltage applied to cols
+             if (row_stable != 0 && (row_stable & (row_stable - 1)) == 0) begin // hmm this is chcing a rwo two clock cycles later than the one the release happens on
                  next_state = DEBOUNCE_WAIT;
+				 // debounce_next_state = CAPTURE;
              end else begin
                  next_state = SCAN;
              end
          end
          
          DEBOUNCE_WAIT: begin
-             allowed = 1'b0; // do not update number pressed variables
+             allowed = 1'b0;
              enable_scan = 1'b0; // STOP scanning during debounce
              reset2 = 1'b1;      // release counter reset
              enable_delay = 1'b1; // start 20ms timer
@@ -119,16 +112,20 @@ module state_fsm(
          end
          
          CAPTURE: begin
-             allowed = 1'b0; // not allowed to update number pressed
+             allowed = 1'b0;
              enable_scan = 1'b1; // Keep scanning to detect release
-             enable_delay = 1'b0; // turn off delay counter for debouncing
-             reset2 = 1'b0; // reset counter for debouncing
+             enable_delay = 1'b0;
+             reset2 = 1'b0;
 			 state_on = 3'b100; 
              
              // Check if the SPECIFIC key that was pressed is released
+			 // i need to go to a row two clock cycles before
              // Only check when scanner is on the right column
+			 // if (col == 4'b1010) begin
+			 // this col is col_stable
              if ((col == captured_col) && ((row_stable & captured_row) == 4'b0000)) begin // so when false it registers it. when this is a true cond, it never shows capture led and goes to scan aft, but when its false 
                  next_state = DEBOUNCE_WAIT; // Go directly to SCAN (no debounce on release)
+				 // debounce_next_state = SCAN;
              end else begin
                  next_state = CAPTURE; // key still pressed or wrong column
              end
@@ -137,6 +134,10 @@ module state_fsm(
  end
 
 endmodule
+
+
+
+
 
 
 

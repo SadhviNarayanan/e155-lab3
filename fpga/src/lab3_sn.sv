@@ -6,7 +6,6 @@
 // Date: 09/10/2025
 
 module lab3_sn(
-    // added a clk here for testbench
    input logic reset,
    input logic [3:0] row,
    output logic [3:0] col,
@@ -17,7 +16,6 @@ module lab3_sn(
 
 
    // internal signals
-   // removed int_osc here for testebench and fed in own clock
    logic int_osc, pressed, enable_delay, high, delay_signal;
    logic clk_signal, high2, reset2, allowed, enable_scan;
    logic [1:0] scan_counter;
@@ -34,15 +32,15 @@ module lab3_sn(
    assign enable_toggle = 1;
 
    // Internal high-speed oscillator
-   HSOSC #(.CLKHF_DIV(2'b01))
+   HSOSC #(.CLKHF_DIV(2'b11))
        hf_osc (.CLKHFPU(1'b1), .CLKHFEN(1'b1), .CLKHF(int_osc));
   
    // the couter flop to wait for 20ms --> debouncing
-   clock_divider # (.freq(480000)) clock_delay_1(int_osc, reset2, enable_delay, delay_signal, high);
+   clock # (.freq(480000)) clock_delay_1(int_osc, reset2, enable_delay, delay_signal, high);
 
 
    // create the 60Hz clock for the seven segment display
-   clock_divider # (.freq(200000)) clock_delay_2(int_osc, reset, enable_toggle, clk_signal, high2);
+   clock # (.freq(50000)) clock_delay_2(int_osc, reset, enable_toggle, clk_signal, high2);
 
 
    // keypad scanner
@@ -60,7 +58,7 @@ module lab3_sn(
    // state machine to cycle through all the states
    state_fsm state_machine(
        .clk(int_osc), .reset(reset), .high(high),
-       .row_stable(row_stable), .row(row), .col(col_stable),
+       .row_stable(row_stable), .col(col_stable),
        .pressed_value(pressed_value), .state(state), .next_state(next_state),
        .first(first), .second(second),
        .allowed(allowed), .enable_delay(enable_delay), .reset2(reset2),
@@ -90,6 +88,8 @@ module lab3_sn(
 
 
 endmodule
+
+
 
 
 
