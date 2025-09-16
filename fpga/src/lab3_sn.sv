@@ -6,6 +6,7 @@
 // Date: 09/10/2025
 
 module lab3_sn(
+    // added a clk here for testbench
    input logic reset,
    input logic [3:0] row,
    output logic [3:0] col,
@@ -16,6 +17,7 @@ module lab3_sn(
 
 
    // internal signals
+   // removed int_osc here for testebench and fed in own clock
    logic int_osc, pressed, enable_delay, high, delay_signal;
    logic clk_signal, high2, reset2, allowed, enable_scan;
    logic [1:0] scan_counter;
@@ -76,16 +78,12 @@ module lab3_sn(
        .pressed_value(pressed_value)
    );
 
-   // TODO : fix and make this ternary
+   
    always_comb begin
-       if (clk_signal == 0) begin
-           enable_seg = 2'b10;
-           s = first;
-       end else begin
-           enable_seg = 2'b01;
-           s = second;
-       end
+	enable_seg = (clk_signal == 0) ? 2'b10 : 2'b01;
+	s = (clk_signal == 0) ? first : second;
    end
+   
 
    // seven segment display
    seven_segment seven_segment_decoder2(s, seg);
