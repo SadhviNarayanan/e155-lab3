@@ -6,7 +6,7 @@
 // Date: 09/03/2025
 
 
-module clock #(parameter freq = 2000000)(
+module clock_divider #(parameter freq = 2000000)(
    input logic clk,
    input logic reset,
    input logic enable,
